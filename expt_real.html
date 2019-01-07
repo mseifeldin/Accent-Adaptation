@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html> 
+    <head>
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" type="text/css" href="js-adapt/style.css" />
+        <title>Speech perception experiment</title>
+
+    </head>
+
+    <body>
+        <h1></h1>
+<!--        <div id="load">Loading <span class="preload-amount"></span>
+            <div class="instruct">We appreciate your patience! The continue button will appear when loading is complete. (Loading time is
+                included in the 12-15 minute time estimate for this study.)</div>
+        </div>
+        -->     
+        <div id="textContainer">
+            <div id="instructions" >
+              URL parameters: 
+            </div>
+            <div id="testInstructions">
+                <!-- over-written by each block which requires instructions -->
+                Press <span id="bKey" class="respKey">X</span> for 'aba'<br />Press <span id="dKey" class="respKey">M</span> for 'ada'
+            </div>
+            <div id="expInstructions">
+                Press space when you hear a beep.
+            </div>
+
+            <form id="mturk_form" method="POST" action="https://www.mturk.com/mturk/externalSubmit">
+                <textArea id="assignmentId" name="assignmentId" ></textArea><br />
+                <textArea id="practiceResp" name="practiceResp" ></textArea><br />
+                <textArea id="errors" name="errors" ></textArea><br />
+            
+                <input type="hidden" id="userAgent" name="userAgent" />
+                <input type="hidden" id="stimlist" name="stimlist" />
+                <input id="submitButton" type="submit" name="Submit" value="Submit" />
+            </form>
+
+            <div id="continue">
+                <span id="contText">Click to continue...</span>
+            </div>
+            <div id="oldBrowserMessage">
+                <p>Your browser does not appear to be compatible with the audio and video elements used in this HIT. </p>
+                <p>Please <strong>do not accept this HIT</strong>, your results will be automatically rejected.  </p>
+                <p>If you'd like to do this HIT, download an up-to-date version of one of these browsers and try again:</p>
+                <div id="browserIcons">
+                    <a target="_blank" href="http://www.google.com/chrome"><img src="img/64-chrome.png" alt="Chrome" /></a>
+                    <a target="_blank" href="http://www.mozilla.com/en-US/firefox/new/"><img src="img/64-firefox.png" alt="Firefox" /></a>
+                    <a target="_blank" href="http://www.opera.com/"><img src="img/64-opera.png" alt="Opera" /></a>
+                    <a target="_blank" href="http://www.apple.com/safari/"><img src="img/64-safari.png" alt="Safari" /></a>
+                </div>
+            </div>
+        </div> <!--END textContainer -->
+        
+        <div id="videoContainer">
+            <!--<video id="exposureStim" class="vidStim" ></video>-->
+            <!--<video id="catchStim" class="vidStim" ></video>-->
+        </div>
+
+        <div id="fixation">
+            +
+        </div>
+
+        <div id="progressBar">
+        </div>
+        
+        <div id="audioContainer" >
+        </div>
+
+        <div id="debugging" >
+            <h3>STATUS</h3>
+            <p id="experimentStatus"></p>
+            <p id="testStatus" ></p>
+            <p id="expStatus" ></p>
+        </div>
+
+        <div id="calibFit" style="position:absolute; bottom:10px; right:10px;"></div>
+        <div id="buttons"></div>
+        <script src="js-adapt/jquery-1.10.1.min.js" type="text/javascript" ></script>
+        <script src="js-adapt/modernizr.min.js" type="text/javascript"></script>
+        <script src="js-adapt/polyfill.js"></script> 
+        <script src="js-adapt/multipleLabelBlock.js" type="text/javascript" ></script>
+        <script src="js-adapt/labelingBlock.js" type="text/javascript" ></script>
+        <script src="js-adapt/exposureBlock.js" type="text/javascript" ></script>
+        <script src="js-adapt/experimentControl2.js" type="text/javascript" ></script>
+        <script src="js-adapt/soundcheckBlock.js" type="text/javascript"></script>
+        <script src="js-adapt/mturk_helpers.js" type="text/javascript"></script>
+        <script src="js-adapt/progressBar.js" type="text/javascript"></script>
+        <script src="js-adapt/logreg.js"  type="text/javascript"></script>
+        <script src="js-adapt/stimuli.js" type="text/javascript" ></script>
+        <script src="js-adapt/utilities.js" type="text/javascript"></script>
+
+        <!--Here is where your experiment javascript file is specified-->
+        <script src="expt_real.js" type="text/javascript"></script>
+
+</body> </html>

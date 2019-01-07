@@ -1,0 +1,54 @@
+---
+title: Speech perception experiment. Takes 4-5 min.
+description: Listen to audio clips and decide what word you are hearing. Please only participate if you are a native speaker of English, and at most speak a few words of another language. 
+keywords: psychology,experiment,speech
+reward: 0.5
+#  assignments per list item (2 per condition)
+assignments: 5
+
+######################################
+## HIT Timing Properties
+######################################
+
+# this Assignment Duration value is 60 * 60 = 1 hour
+assignmentduration: 3600
+
+# this HIT Lifetime value is 60*60*24*5 = 5 days
+hitlifetime: 172800
+
+# this Auto Approval period is 60*60*24*15 = 15 days
+autoapprovaldelay: 1296000
+
+qualifications:
+  builtin:
+    # this is a built-in qualification -- user must have > 95% approval rate
+    - qualification: PercentAssignmentsApprovedRequirement
+      comparator: GreaterThan
+      value: 95
+      private: true
+    # this is a built-in qualification -- user must be in the United States
+    - qualification: LocaleRequirement
+      comparator: In
+      locale: US
+      private: false
+ # custom:
+    # Has not done a needswashed experiment
+   # For sandbox testing
+#    - qualification: 3KOC1385ANCBTHF5W1U4POYZ7CBBYQ
+ #   - qualification: 3Z755UFFEJQVFIP5MSA6JDZ6F1H19C
+  #    comparator: DoesNotExist
+   #   private: true
+
+question:
+  url: https://www.hlp.rochester.edu/mturk/mseifeldin/norming-study/expt_maryam.html?group={group}&respKeys={respKeys}
+  height: 750
+  input:
+    - respKeys: m,x
+      group: OneExpS
+    - respKeys: x,m
+      group: OneExpS
+    - respKeys: m,x
+      group: OneExpH
+    - respKeys: x,m
+      group: OneExpH
+
